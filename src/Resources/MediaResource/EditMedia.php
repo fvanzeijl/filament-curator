@@ -16,6 +16,14 @@ class EditMedia extends EditRecord
     }
 
     /**
+    * Reset fileupload-field after media is updated
+    */
+    protected function afterSave(): void
+    {
+        $this->refreshFormData(['file']);
+    }
+
+    /**
      * @throws Exception
      */
     public function getHeaderActions(): array
